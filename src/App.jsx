@@ -8,8 +8,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<Default_layout />}>
-          <Route></Route>
-          <Route></Route>
+          <Route path="/" element={<HomePage />}></Route>
+          <Route path="/movies/:id" element={<DetailMovie />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
