@@ -1,7 +1,7 @@
 import React from "react";
 
 function DetailMovie() {
-  return <div>Dettaglio</div>;
+  return <div></div>;
 }
 
 export default DetailMovie;
