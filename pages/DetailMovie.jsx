@@ -8,7 +8,7 @@ function DetailMovie() {
   //recuper l'id
   const { id } = useParams();
   //definisco la variabile di stato
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState({});
 
   let navigate = useNavigate();
 
@@ -18,7 +18,7 @@ function DetailMovie() {
       .then((resp) => {
         setMovies(resp.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => navigate("/not-found", { replace: true }));
   };
 
   useEffect(dataFecth, [id, navigate]);

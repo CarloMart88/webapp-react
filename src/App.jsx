@@ -2,6 +2,7 @@ import Default_layout from "../layouts/Default_layout";
 import HomePage from "../pages/homePage";
 import DetailMovie from "../pages/DetailMovie";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NotFound from "../pages/NotFound";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Route element={<Default_layout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/api/movies/:id" element={<DetailMovie />} />
+          <Route path="*" element={<NotFound />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
