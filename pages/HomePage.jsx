@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 //creo la variabile per il data fetching che farò direttamente nello useEffect con la chiamata axios
 
@@ -33,18 +34,20 @@ function HomePage() {
             } = movie;
             return (
               <div className="col-12 col-md-6 col-lg-4 card m-5" key={id}>
-                <div className="card-img">
-                  <img src={image} alt={title} />
-                </div>
-                <div className="overlay">
-                  <div className="card-body my-5">
-                    <h2>Title:{title} </h2>
-                    <h5>Director: {director} </h5>
-                    <h5>Genre: {genre}</h5>
-                    <h5>Relase: {release_year}</h5>
-                    <h6>Description: {abstract} </h6>
+                <NavLink to={`/api/movies/${id}`}>
+                  <div className="card-img">
+                    <img src={image} alt={title} />
                   </div>
-                </div>
+                  <div className="overlay">
+                    <div className="card-body my-5">
+                      <h2>Title:{title} </h2>
+                      <h5>Director: {director} </h5>
+                      <h5>Genre: {genre}</h5>
+                      <h5>Relase: {release_year}</h5>
+                      <h6>Description: {abstract} </h6>
+                    </div>
+                  </div>
+                </NavLink>
               </div>
             );
           })}
