@@ -1,6 +1,6 @@
 import Default_layout from "../layouts/Default_layout";
 import HomePage from "../pages/homePage";
-import DetailMovie from "../pages/detailMovie";
+import DetailMovie from "../pages/DetailMovie";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
