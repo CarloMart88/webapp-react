@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function DetailMovie() {
   //recuper l'id
@@ -27,13 +29,18 @@ function DetailMovie() {
           <div className="col-5 detailCard">
             <img src={image} alt={title} />
           </div>
-          <div className="col-5 m-5">
+          <div className="col-5 m-5 description-card">
             <h1 className="mb-5">
-              <em>title:{title}</em>
+              Title:<em> {title}</em>
             </h1>
             <h2 className="mb-3">Director: {director}</h2>
             <h4 className="mb-3">Relased: {release_year}</h4>
             <h4 className="mb-3">The story: {abstract}</h4>
+            <Link to="/">
+              <button className="btn back-home">
+                <i className="fa-regular fa-house" title="torna indietro"></i>
+              </button>
+            </Link>
           </div>
         </div>
       </div>

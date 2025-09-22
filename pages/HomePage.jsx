@@ -33,7 +33,7 @@ function HomePage() {
               abstract,
             } = movie;
             return (
-              <div className="col-12 col-md-6 col-lg-4 card m-5">
+              <div className="col-12 col-md-6 col-lg-4 card m-5" key={id}>
                 <NavLink to={`/api/movies/${id}`}>
                   <div className="card-img">
                     <img src={image} alt={title} />
