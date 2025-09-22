@@ -10,6 +10,8 @@ function DetailMovie() {
   //definisco la variabile di stato
   const [movies, setMovies] = useState([]);
 
+  let navigate = useNavigate();
+
   const dataFecth = () => {
     axios
       .get(`http://localhost:3000/api/movies/${id}`)
@@ -19,7 +21,7 @@ function DetailMovie() {
       .catch((err) => console.log(err));
   };
 
-  useEffect(dataFecth, []);
+  useEffect(dataFecth, [id, navigate]);
   const { image, title, director, abstract, release_year } = movies;
 
   return (
@@ -37,10 +39,22 @@ function DetailMovie() {
             <h4 className="mb-3">Relased: {release_year}</h4>
             <h4 className="mb-3">The story: {abstract}</h4>
             <Link to="/">
-              <button className="btn back-home">
+              <button className="btn back-home mx-5 my-5">
                 <i className="fa-regular fa-house" title="torna indietro"></i>
               </button>
             </Link>
+            <button
+              className="btn back-home mx-4"
+              onClick={() => navigate(`/api/movies/${parseInt(id) - 1}`)}
+            >
+              <i className="fa-solid fa-arrow-left"></i>
+            </button>
+            <button
+              className="btn back-home"
+              onClick={() => navigate(`/api/movies/${parseInt(id) + 1}`)}
+            >
+              <i className="fa-solid fa-arrow-right"></i>
+            </button>
           </div>
         </div>
       </div>
