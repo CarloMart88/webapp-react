@@ -65,10 +65,22 @@ function DetailMovie() {
                 return (
                   <div className="col-5 " key={id}>
                     <h2>
-                      <em>Your review</em>
+                      <em>Your reviews</em>
                     </h2>
                     <h5>Name: {name} </h5>
-                    <h5>Vote: {vote} </h5>
+                    <h5>
+                      Vote: {vote}
+                      {[1, 2, 3, 4, 5].map((num, i) => {
+                        return (
+                          <i
+                            key={i}
+                            className={`fa ${
+                              i < vote ? `fa-solid` : `fa-regular`
+                            } fa-star text-warning ms-2`}
+                          ></i>
+                        );
+                      })}{" "}
+                    </h5>
                     <h5>Text: {text} </h5>
                   </div>
                 );
