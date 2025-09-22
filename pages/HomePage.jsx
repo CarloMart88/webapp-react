@@ -33,7 +33,7 @@ function HomePage() {
               abstract,
             } = movie;
             return (
-              <div className="col-12 col-md-6 col-lg-4 card m-5" key={id}>
+              <div className="col-12 col-md-6 col-lg-4 card m-5">
                 <NavLink to={`/api/movies/${id}`}>
                   <div className="card-img">
                     <img src={image} alt={title} />
@@ -42,9 +42,6 @@ function HomePage() {
                     <div className="card-body my-5">
                       <h2>Title:{title} </h2>
                       <h5>Director: {director} </h5>
-                      <h5>Genre: {genre}</h5>
-                      <h5>Relase: {release_year}</h5>
-                      <h6>Description: {abstract} </h6>
                     </div>
                   </div>
                 </NavLink>
