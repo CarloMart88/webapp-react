@@ -59,6 +59,42 @@ function DetailMovie() {
           </div>
         </div>
         <div className="row">
+          <div className="col-12 my-5 ms-4">
+            <h3>Please leave us your opinion!</h3>
+            <form>
+              <div className="my-2">
+                <label className="form-label">
+                  <em>Name:</em>
+                </label>
+                <input className="ms-2" type="text" name="name" id="name" />
+              </div>
+              <div className="my-2">
+                <label className="form-label">
+                  <em>Score:</em>
+                </label>
+                <input
+                  className="ms-2"
+                  type="number"
+                  min={0}
+                  max={5}
+                  name="vote"
+                  id="vote"
+                />
+              </div>
+              <div className="col-4">
+                <span className="">
+                  <em>Your personal reviews</em>
+                </span>
+                <textarea
+                  className="form-control my-1"
+                  aria-label="With textarea"
+                  maxLength={150}
+                ></textarea>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div className="row">
           <div className="col-12 d-flex my-5 ms-4">
             {movies.reviews ? (
               movies.reviews.map((review) => {
