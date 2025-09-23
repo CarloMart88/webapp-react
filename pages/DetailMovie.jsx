@@ -60,18 +60,20 @@ function DetailMovie() {
           </div>
         </div>
         <div className="row">
-          <FormReviews movieId={id} />
+          <FormReviews movieId={id} fetch={dataFecth} />
         </div>
         <div className="row">
-          <div className="col-12 d-flex my-5 ms-4">
+          <div className="col-12 text-center">
+            <h2>
+              <em>Your reviews</em>
+            </h2>
+          </div>
+          <div className="col-12 d-flex flex-wrap my-5 ms-4">
             {movies.reviews ? (
               movies.reviews.map((review) => {
                 const { vote, name, text, id } = review;
                 return (
-                  <div className="col-5 " key={id}>
-                    <h2>
-                      <em>Your reviews</em>
-                    </h2>
+                  <div className="col-5 my-3 ms-3" key={id}>
                     <h5>Name: {name} </h5>
                     <h5>
                       Vote: {vote}
