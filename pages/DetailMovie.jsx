@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Star from "../components/Star";
 
 function DetailMovie() {
   //recuper l'id
@@ -70,16 +71,7 @@ function DetailMovie() {
                     <h5>Name: {name} </h5>
                     <h5>
                       Vote: {vote}
-                      {[1, 2, 3, 4, 5].map((num, i) => {
-                        return (
-                          <i
-                            key={i}
-                            className={`fa ${
-                              i < vote ? `fa-solid` : `fa-regular`
-                            } fa-star text-warning ms-2`}
-                          ></i>
-                        );
-                      })}{" "}
+                      <Star vote={vote} />
                     </h5>
                     <h5>Text: {text} </h5>
                   </div>
