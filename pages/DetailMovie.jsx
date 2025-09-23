@@ -60,7 +60,7 @@ function DetailMovie() {
           </div>
         </div>
         <div className="row">
-          <FormReviews />
+          <FormReviews movieId={id} />
         </div>
         <div className="row">
           <div className="col-12 d-flex my-5 ms-4">

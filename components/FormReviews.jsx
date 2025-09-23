@@ -1,7 +1,25 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 
-function FormReviews() {
+function FormReviews({ movieId }) {
+  //prendo l'url aggiungendo l'id che ho passato come props
+  const apiUrl = `http://localhost:5173/api/movies/${movieId}/reviews`;
+
+  const [formData, setFormData] = useState({
+    text: "",
+    vote: "",
+    name: "",
+  });
+
+  const setFieldValue = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
   return (
     <div className="col-12 my-5 ms-4">
       <h3>
